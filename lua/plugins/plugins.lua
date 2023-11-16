@@ -10,7 +10,6 @@
 return {
     -- add gruvbox
     { "rebelot/kanagawa.nvim" },
-    { "Lilja/zellij.nvim" },
 
     -- Configure LazyVim to load gruvbox
     {
@@ -42,13 +41,9 @@ return {
             -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
             -- Be aware that you also will need to properly configure your LSP server to
             -- provide the inlay hints.
-            inlay_hints = {
-                enabled = true,
-            },
+            --
             -- add any global capabilities here
             capabilities = {},
-            -- Automatically format on save
-            autoformat = true,
             -- Enable this to show formatters used in a notification
             -- Useful for debugging formatter issues
             format_notify = false,
@@ -113,10 +108,6 @@ return {
             },
         },
     },
-
-    -- use mini.starter instead of alpha
-    { import = "lazyvim.plugins.extras.ui.mini-starter" },
-
 
     -- Use <tab> for completion and snippets (supertab)
     -- first: disable default <tab> and <s-tab> behavior in LuaSnip
@@ -261,6 +252,9 @@ return {
                 }
             })
         end,
+    },
+    {"nvim-neo-tree/neo-tree.nvim",
+        opts = {filesystem = {filtered_items = {hide_gitignored = false}}},
     },
 
     {
